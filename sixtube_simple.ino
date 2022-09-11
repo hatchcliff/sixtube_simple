@@ -43,17 +43,17 @@
 
 #define PERSIST 7    //Milliseconds for which each tube is lit during the scan (one scan = one execution of loop()).
                      //The recommended setting is PERSIST=7, which gives plenty of scope for fading (by lighting the
-                     //numbers fading in/out for increasing/decreasing portions of the PERSIST period).  PERSIST=7
-                     //also works well without fading.
-                 
-                     //The 6 tubes are scanned in 3 pairs.  The time taken for a complete scan (performed during a single
-                     //execution of loop()) is approximately (3 * PERSIST) + 2 ms.  The  extra 2 milliseconds is spent
-                     //doing things other than refreshing the display, such as checking for button presses.  The scan
-                     //frequency is approximately 1000 / ((3 * PERSIST) + 2) Hz.  So setting PERSIST=7 gives a
-                     //scan rate of 44 Hz.
+                     //numbers fading in/out for increasing/decreasing portions of the PERSIST period).
+                     
+                     //The 6 tubes are scanned in 3 pairs.  The time taken for a complete scan is approximately
+                     //(3 * PERSIST) + 2 ms.  The  extra 2 milliseconds are spent doing things other than refreshing the display,
+                     //such as checking for button presses.  The scan frequency is approximately 1000 / ((3 * PERSIST) + 2) Hz.
+                     //So setting PERSIST=7 gives a scan rate of 44 Hz.
 
                      //Settings higher than 7 are not useful because they slow the scan to the point where visible flicker occurs.
-
+                     
+                     //The PERSIST setting is ignored if FADE is undefined.
+                 
 #define FADE         //Define to fade numbers in and out gradually when the display changes.  Comment out the definition
                      //to change numbers instantaneously.
 
