@@ -1,4 +1,4 @@
-// Sixtube_simple, Version 1.0, 4th January 2022.
+// Sixtube_simple, Version 1.0.0, 4th January 2022.
 // ==============================================
 //
 // Program for a 6-digit, Arduino Nano, SN74141/DS3231 clock from RLB Designs (http://rlb-designs.com/),
