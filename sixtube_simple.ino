@@ -5,7 +5,7 @@
 // based on original code by Robin Birtles and Chris Gerekos.
 //
 // The program is designed with limited functionality, with the intention of making the clock as easy as
-// easy to set up as possible.  Date and time functions and an automatic cathode cleaning cycle are
+// possible to set up as possible.  Date and time functions and an automatic cathode cleaning cycle are
 // provided, but there are no alarm functions, and no run-time selectable options.
 //
 // A set of 8 #define directives set various compile-time options.  Of these, the following 6 are probably the
