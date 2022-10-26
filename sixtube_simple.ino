@@ -1,5 +1,5 @@
-// Sixtube_simple, Version 1.0.0, 4th January 2022.
-// ==============================================
+// Sixtube_simple by Cliff Hatch, Version 1.0.0, 14th October 2022.
+// ================================================================
 //
 // Program for a 6-digit, Arduino Nano, SN74141/DS3231 clock from RLB Designs (http://rlb-designs.com/),
 // based on original code by Robin Birtles and Chris Gerekos.
@@ -35,8 +35,6 @@
 //
 // The <mode> and <set> buttons are unresponsive for a few seconds every 10 minutes during the automatic cathode
 // cleaning cycle. 
-//
-// Cliff Hatch, 4th January 2022.
 
 
 #include "RTClib.h"
@@ -376,7 +374,7 @@ void AdjustDHMS(bool bAdvance, TimeSpan nSpan)
 
 //Advance/retard one month.
 //This cannot be done in the same way as days, hours, minutes and seconds because different months
-//represent different time spans.  This function adjusts the month, and wraps it if necessary (to keep
+//represent different time spans.  This function adjusts the month and wraps it if necessary (to keep
 //it within the range 1 to 12) without carrying to the year.
 //bAdvance = true to advance, false to retard.
 void AdjustMonth(bool bAdvance)
@@ -484,7 +482,7 @@ void loop()
     static bool bSetMode = false;  //true = SET mode, false = DISPLAY mode
         
     static bool bBlink = false;  //Toggles between true and false every 500 milliseconds to control the blinking of pairs of tubes in set mode, true = turn tubes on, false = turn tubes off
-    static byte nPair = 1;       //Pair of Nixie tubes selected in set mode: 1=left, 2=middle, 3=right.  nPair is incremented every time the <set> button is pressed.
+    static byte nPair = 3;       //Pair of Nixie tubes selected in set mode: 1=left, 2=middle, 3=right.  nPair is incremented every time the <set> button is pressed.
     static long nSetTimer;       //Used to discriminate between long and short presses of the set button.
         
     static unsigned long nRunTime;    //Run time in milliseconds since the program started, returned by millis().  Overflows to zero every 50 days approximately.
@@ -563,7 +561,7 @@ void loop()
             
             if (!bSetMode)
             {
-                nPair = 1;  //Default the selected pair back to 1 when exiting set mode.
+                nPair = 3;  //Default the selected pair back to 3 when exiting set mode.
                 bPerDate = false;  //Clear flag, in case the periodic date display was on when set mode was entered
             }
         }
